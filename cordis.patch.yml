@@ -1,0 +1,36 @@
+# 合并插件：余额格子 + 费用显示（每轮 / 会话累计 / token）
+# 一行 entry 同时承载 host（注册 cost projection）与浏览器半身（client.js）。
+- insert:
+    - id: money-widgets
+      name: 'dsh-plugin-money-widgets'
+      config:
+        # 官方价（高峰价，元/百万 token；空闲自动半价）
+        prices:
+          deepseek-flash:
+            cacheHit: 0.04
+            cacheMiss: 2.0
+            output: 8.0
+          deepseek-v4-pro:
+            cacheHit: 0.30
+            cacheMiss: 9.0
+            output: 27.0
+          deepseek-v4-flash:
+            cacheHit: 0.04
+            cacheMiss: 2.0
+            output: 8.0
+          deepseek-v4-flash-vision-exp:
+            cacheHit: 0.04
+            cacheMiss: 2.0
+            output: 8.0
+        peakMode: auto
+        defaultModel: deepseek-flash
+        budget:
+          enabled: false
+          perTurn: 1
+          mode: warn
+          # 整段会话预算（元）；0 = 不启用
+          session: 0
+        remind:
+          # 峰谷切换前 30 分钟提醒（北京时间）
+          peak: true
+          leadMinutes: 30
