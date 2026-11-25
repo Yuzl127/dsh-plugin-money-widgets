@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-money-widgets",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "DeepSeek Harness plugin: remaining account balance pill + per-turn and session cost display, merged into one chat-UI plugin.",
   "type": "module",
   "main": "./lib/index.js",
